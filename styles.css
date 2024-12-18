@@ -136,58 +136,71 @@ nav .content .links li{
     display: none;
 
 }
-
-.header #show-search:checked ~ .search-icon i::before{
-    content: "\f00d";
+/* Toggle search icon when search box is active */
+.header #show-search:checked ~ .search-icon i::before {
+    content: "\f00d"; /* Changes icon to a close icon when search is active */
 }
 
-.header .search-box{
+/* Search box container */
+.header .search-box {
     position: absolute;
-    height: 100%;
-    max-width: calc(100%-50px);
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-
+    right: 0; /* Positions the search box on the right side */
+    top: 50%; /* Centers the search box vertically */
+    transform: translateY(-50%); /* Centers the search box vertically */
+    height: 40px; /* Adjust height as needed */
+    width: 200px; /* Fixed width for the search box */
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
-.header #show-search:checked ~ .search-box{
-    opacity: 1;
-    pointer-events: auto;
-
+/* Show search box when checked */
+.header #show-search:checked ~ .search-box {
+    opacity: 1; /* Make visible */
+    pointer-events: auto; /* Enable interaction */
 }
 
-.search-box input{
-    width: 100%;
-    height: 100%;
+/* Search input field styling */
+.search-box input {
+    width: 100%; /* Makes the input field fill the width of the search box */
+    height: 100%; /* Makes the input field fill the height of the search box */
     border: none;
     outline: none;
-    font-size: 17px;
+    font-size: 14px;
     color: black;
     background: white;
-    padding: 0px 100px 0px 15px;
+    padding: 0 40px 0 15px; /* Adds space for the button */
+    border-radius: 20px;
 }
 
-.search-box .go-icon{
+/* Search icon button styling */
+.search-box .go-icon {
     position: absolute;
-    right: 10px;
+    right: 10px; /* Position the icon inside the search box */
     top: 50%;
     transform: translateY(-50%);
-    line-height: 60px;
-    width: 70px;
-    background: transparent;
+    width: 30px;
+    height: 30px;
+    background-color: #388b6f; /* Green background */
+    color: white;
+    border-radius: 50%; /* Circle shape */
+    font-size: 16px;
     border: none;
-    outline: none;
-    color: #388b6f;
-    font-size: 20px;
-    cursor: pointer;
-
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
-.header input[type="checkbox"]{
+/* Hide the checkbox for search and menu */
+.header input[type="checkbox"] {
     display: none;
 }
+
+/* Optional: Style for menu icon (if applicable) */
+.header .search-icon i {
+    font-size: 20px; /* Adjust icon size */
+    color: black; /* Default icon color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
 
 
 
@@ -255,34 +268,32 @@ nav .content .links li{
 }
 /* header end */
 /* home section start */
-
-.home{
+.home {
     background-image: url(Assets/bg3.jpg);
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-
-    background-position: 50%;
+    background-position: center;
 }
 
-.home .main-text{
+.home .main-text {
     text-align: center;
     padding: 150px 10% 10px;
-
 }
 
-.main-text h1{
+.main-text h1 {
     font-size: 60px;
     color: #fff;
     text-shadow: 0px 0px 1px black;
 }
 
-.home .main-text p{
+.home .main-text p {
     color: white;
     margin-top: 5px;
 }
-#btn{
+
+#btn {
     width: 200px;
     height: 36px;
     background: white;
@@ -290,17 +301,54 @@ nav .content .links li{
     letter-spacing: 1px;
     border: 2px solid #008080;
     border-radius: 5px;
-    margin-top:10px ;
+    margin-top: 10px;
     transition: 0.5s;
     cursor: pointer;
 }
 
-#btn:hover{
+#btn:hover {
     background-color: #008080;
     color: white;
 }
-/* home section end */
 
+/* Mobile View */
+@media (max-width: 767px) {
+    .home .main-text {
+        padding: 100px 5% 10px;
+    }
+
+    .main-text h1 {
+        font-size: 36px;
+    }
+
+    .home .main-text p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    #btn {
+        width: 180px;
+        height: 34px;
+        font-size: 14px;
+    }
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .home .main-text {
+        padding: 120px 10% 10px;
+    }
+
+    .main-text h1 {
+        font-size: 48px;
+    }
+
+    #btn {
+        width: 190px;
+        height: 36px;
+        font-size: 16px;
+    }
+}
 
 /* top section card start */
 
@@ -627,64 +675,61 @@ nav .content .links li{
 
 
 /* our gallary start */
- .gallary h3{
-    text-align: center;
+ /* Our Gallery Start */
+.gallary {
+    text-align: center; /* Centering the title */
+}
+
+.gallary h3 {
     font-size: 36px;
     text-transform: uppercase;
     font-weight: 600;
     color: #008080;
     text-shadow: 0px 1px 1px black;
- }
+    margin-bottom: 30px; /* Add spacing below title */
+}
 
-
- .gallary-img {
+.gallary-img {
     margin-top: 30px;
-    margin-left:55px;
-
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
- }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center; /* Vertically center items */
+    justify-items: center; /* Horizontally center items */
+}
 
- /* #image1{
-    padding: 100px;
- }
-    /*
-     /* .img1{ 
-padding: 10px; } */
-
- .gallary-img img{
-    margin-left: 20px;
-    max-width: 530px;
-    height: auto;
+.gallary-img img {
     width: 100%;
+    max-width: 530px; /* Image width limit */
+    height: auto;
     border-radius: 10px;
-    box-shadow: rgba(99,99,99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 0.3s;
     cursor: pointer;
-    gap: 0.50rem;
- }
+    object-fit: cover; /* Ensure images don't stretch */
+}
 
-
- .gallary-img img:hover{
+.gallary-img img:hover {
     transform: translateY(-10px);
- }
+}
 
- @media(max-width:920px){
-    .gallary-img{
-        grid-template-columns: 1fr;
-
+/* Mobile and tablet view */
+@media (max-width: 920px) {
+    .gallary-img {
+        grid-template-columns: 1fr; /* Switch to single column layout */
+        margin-left: 0;
+        justify-items: center; /* Center items on smaller screens */
     }
-    .gallary-img img{
-        width: 100%;
-        height: auto;
+
+    .gallary-img img {
+        width: 90%; /* Slightly reduce width for mobile */
         max-width: 100%;
     }
- }
+}
+
+/* Our Gallery End */
+
 /* our gallary end *
-
-
-
 /* Contact Section Start */
 .contact {
     display: grid;
@@ -780,24 +825,21 @@ padding: 10px; } */
     background: #008080;
     color: white;
     border: none;
-    /* padding: 10px 20px; */
     width: 160px;
-
     border-radius: 5px;
     cursor: pointer;
-    transition:0.5s ease;
+    transition: 0.5s ease;
 }
 
 .contact-form .submit:hover {
     background: #005757;
     width: 170px;
-    
 }
 
 /* Responsive Design */
 @media (max-width: 920px) {
     .contact {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* One column on mobile */
         padding: 50px 5%;
     }
 
@@ -805,23 +847,23 @@ padding: 10px; } */
         max-width: 100%;
     }
 }
+
 /* Contact Section End */
 
-/* review section start */
-
-.review{
+/* Review Section Start */
+.review {
     padding: 120px 8% 120px;
     background: white;
-} 
+}
 
-.review-content{
+.review-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensure flexible grid items */
     gap: 2.5rem;
     margin-top: 5rem;
 }
-.box{
+
+.box {
     background: #f3f3f3;
     padding: 35px 45px;
     height: 50vh;
@@ -830,25 +872,23 @@ padding: 10px; } */
     text-align: center;
 }
 
-.img img{
+.box .img img {
     width: 100px;
     border-radius: 100px;
 }
 
-.review .star{
+.review .star {
     color: rgba(255, 153, 0);
     margin-top: 10px;
-
 }
 
-@media(max-width:920px){
-    .review-content{
-        grid-template-columns: 1fr;
-
+/* Review Section Mobile Optimization */
+@media (max-width: 920px) {
+    .review-content {
+        grid-template-columns: 1fr; /* One column on mobile */
+        padding: 0 10%; /* Adjust padding for mobile */
     }
-    
 }
-
 
 
 
