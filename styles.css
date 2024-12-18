@@ -88,7 +88,7 @@ nav .content .links li{
 .content .links li a:hover,
 .header .menu-icon{
     color: #388b6f;
-    font-size: 10px;
+    /* font-size: 10px; */
     line-height: 70px;
     width: 70px;
     text-align: center;
@@ -311,39 +311,54 @@ nav .content .links li{
 }
 
 /* top section card end */
+/* About Section Start */
+/* General Section Styling */
+/* General Reset */
 
-
-/* About section start */
-.about {
+/* General Inline Section Styling */
+.inline-section {
     padding: 150px 8% 120px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 1.5rem;
+    text-align: center; /* For aligning inline-block elements centrally */
+    font-size: 0; /* Removes spacing between inline-block elements */
 }
 
-.about-img img {
-    max-width: 530px;
-    height: 500px;
-    width: 100%;
+.inline-section .inline-img,
+.inline-section .inline-text {
+    display: inline-block; /* Positions elements side by side */
+    vertical-align: top; /* Aligns the top of the elements */
+    width: 48%; /* Adjust width for proper spacing */
+    font-size: 16px; /* Resets font size */
+}
+
+/* Image Styling */
+.inline-section .inline-img img {
+    max-width: 100%; /* Ensures responsiveness */
+    height: 500px; /* Maintains aspect ratio */
     border-radius: 0;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.about-text h3 {
+/* Text Styling */
+.inline-section .inline-text h3 {
     color: #008080;
     font-size: 30px;
-    line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-.about-text p {
-    color: black;
-    letter-spacing: 1px;
-    margin-bottom: 4rem;
-    margin-top: 10px;
+.inline-section .inline-text h4 {
+    color: #555;
+    font-size: 1.4em;
+    margin-bottom: 1rem;
 }
 
+.inline-section .inline-text p {
+    color: #777;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+/* Button Styling */
 #view-more-btn {
     width: 150px;
     height: 35px;
@@ -361,144 +376,51 @@ nav .content .links li{
     color: white;
 }
 
-@media (max-width: 920px) {
-    .about {
-        grid-template-columns: 1fr;
-    }
-    .about-img {
-        text-align: center;
-        order: 2;
-    }
-
-    .about-img img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-}
-
-/* Why Choose Us Section */
-.why-choose-us {
-    padding: 150px 8% 120px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.why-choose-us-img img {
-    max-width: 530px;
-    height: 500px;
-    width: 100%;
-    border-radius: 0px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.why-choose-us-text h3 {
-    color: #008080;
-    font-size: 30px;
-    line-height: 1;
-}
-
-.features {
-    margin-bottom: 30px;
-}
-
-.feature {
-    margin-bottom: 15px;
-}
-
-.feature h4 {
-    color: #555;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-.feature p {
-    color: #777;
-    font-size: 1em;
-}
-
-.cta {
-    color: black;
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-
-.cta strong {
-    font-weight: bold;
-    color: #0056b3;
-}
-
-@media (max-width: 920px) {
-    .why-choose-us {
-        grid-template-columns: 1fr;
-    }
-
-    .why-choose-us-img {
-        text-align: center;
-        order: 2;
-    }
-
-    .why-choose-us-img img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-}
-
-/* About Owner Section */
-#owner-info {
-    padding: 150px 8% 120px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.about-img img {
-    max-width: 530px;
-    height: 500px;
-    width: 100%;
-    border-radius: 0;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.about-text h4 {
-    color: #008080;
-    font-size: 24px;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-.about-text p {
-    color: black;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
-}
-
-@media (max-width: 920px) {
-    #owner-info {
-        grid-template-columns: 1fr;
-    }
-    .about-img {
-        text-align: center;
-        order: 2;
-    }
-
-    .about-img img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-}
-
+/* Hidden Sections (Why Choose Us & Owner Info) */
 #why-choose-us, #owner-info {
     display: none;
 }
 
+/* Responsive Design */
+@media (max-width: 920px) {
+    .inline-section .inline-img,
+    .inline-section .inline-text {
+        display: block;
+        width: 100%;
+    }
+
+    .inline-section .inline-img {
+        text-align: center;
+    }
+}
+
+/* Responsive Styling */
+@media (max-width: 920px) {
+    .inline-section .inline-img,
+    .inline-section .inline-text {
+        display: block; /* Stack vertically on smaller screens */
+        width: 100%; /* Full-width sections */
+    }
+
+    .inline-img img {
+        max-width: 100%;
+    }
+
+    #view-more-btn {
+        margin-top: 1rem; /* Add spacing above the button */
+    }
+}
 
 
+/* Responsive Styling */
+@media (max-width: 920px) {
+    .inline-section .inline-img,
+    .inline-section .inline-text {
+        display: block; /* Stacks elements vertically */
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 1.5rem;
+    }
+}
 
 /* product section start */
     
@@ -679,7 +601,7 @@ nav .content .links li{
 
  .gallary-img {
     margin-top: 30px;
-    /* margin-left:10px; */
+    margin-left:55px;
 
     display: grid;
     grid-template-columns: repeat(2,1fr);
