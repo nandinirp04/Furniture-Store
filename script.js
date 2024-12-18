@@ -9,3 +9,6 @@ document.getElementById('view-more-btn').addEventListener('click', function () {
     ownerInfoSection.style.display = isHidden ? 'block' : 'none';
     this.textContent = isHidden ? 'Read Less...' : 'Read More...'; // Change button text
 });
+
+
+
